@@ -50,10 +50,10 @@ set tabstop=2
 
 " Go back and forward with Ctrl+O and Ctrl+I
 " (make sure to remove default Obsidian shortcuts for these to work)
-exmap back obcommand app:go-back
-nmap <C-o> :back<CR>
-exmap forward obcommand app:go-forward
-nmap <C-i> :forward<CR>
+" exmap back obcommand app:go-back
+" nmap <C-o> :back<CR>
+" exmap forward obcommand app:go-forward
+" nmap <C-i> :forward<CR>
 
 " Emulate Folding https://vimhelp.org/fold.txt.html#fold-commands
 exmap togglefold obcommand editor:toggle-fold
