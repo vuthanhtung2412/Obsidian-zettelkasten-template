@@ -26,12 +26,13 @@ nnoremap C "_C
 nnoremap r "_r
 
 " j/k nav by visual line not vertical line
+" Turn off highlight as soon as navigation starts
+nnoremap j :nohl<CR>gj
+nnoremap k :nohl<CR>gk
 vnoremap j gj
 vnoremap k gk
 noremap J j
 noremap K k
-
-" Turn off highlight on horizontal navigation
 nnoremap h :nohl<CR>h
 nnoremap l :nohl<CR>l
 
@@ -47,6 +48,13 @@ set tabstop=2
 " action + i/a + s : on the current sentence (surrounded by dots)
 " Already works !
 
+" Go back and forward with Ctrl+O and Ctrl+I
+" (make sure to remove default Obsidian shortcuts for these to work)
+exmap back obcommand app:go-back
+nmap <C-o> :back<CR>
+exmap forward obcommand app:go-forward
+nmap <C-i> :forward<CR>
+
 " Emulate Folding https://vimhelp.org/fold.txt.html#fold-commands
 exmap togglefold obcommand editor:toggle-fold
 nmap zo :togglefold<CR>
@@ -58,6 +66,11 @@ nmap zR :unfoldall<CR>
 
 exmap foldall obcommand editor:fold-all
 nmap zM :foldall<CR>
+
+exmap tabnext obcommand workspace:next-tab
+nmap gt :tabnext<CR>
+exmap tabprev obcommand workspace:previous-tab
+nmap gT :tabprev<CR>
 
 " TO BE CONTINUED:
 " action + i/a + g : on the whole file 
@@ -76,4 +89,3 @@ nmap zM :foldall<CR>
 
 " action + i/a + i : on the same identation
 " leap.nvim like
-" proper jump list setup
